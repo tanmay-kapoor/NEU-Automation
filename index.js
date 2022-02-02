@@ -47,12 +47,8 @@ const automate = async () => {
         await driver.findElement(webdriver.By.id("ay-loginSubmit")).click();
 
         text = await driver
-            .findElement(webdriver.By.css(".status > h4"))
+            .findElement(webdriver.By.css(".status > ul h4"))
             .getText();
-
-        if (text.split(" ")[2] !== "SUBMITTED") {
-            text = "Decision is out! All the best boi :)";
-        }
 
         await driver
             .findElement(webdriver.By.css("[href='javascript:logout();']"))
